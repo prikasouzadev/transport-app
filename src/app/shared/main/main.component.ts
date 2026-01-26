@@ -11,7 +11,7 @@ import { RouterModule } from '@angular/router';
 })
 export class MainComponent {
   tabs = [
-    { label: 'Entregas', route: '/list' },
+    { label: 'Entregas', route: '/delivery-list'},
     { label: 'Dashboard', route: '/dashboard' },
     { label: 'Relatórios', route: '/report' }
   ];

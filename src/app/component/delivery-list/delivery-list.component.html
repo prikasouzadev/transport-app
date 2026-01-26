@@ -1,0 +1,84 @@
+<div class="space-y-6">
+  <div class="flex flex-wrap gap-4 items-center justify-between bg-slate-50 p-4 rounded-2xl border border-slate-200">
+    <div class="flex gap-4 flex-1">
+      <div class="relative w-full max-w-xs">
+        <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
+        <input type="text" [ngModel]="searchTerm()" (ngModelChange)="searchTerm.set($event); currentPage.set(1)"
+               placeholder="Buscar por cliente ou ID..."
+               class="w-full pl-10 pr-4 py-2 rounded-xl border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-brand-active outline-none text-sm">
+      </div>
+
+      <select [ngModel]="filterStatus()" (ngModelChange)="filterStatus.set($event); currentPage.set(1)"
+              class="px-4 py-2 rounded-xl border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-brand-active outline-none text-sm bg-white">
+        <option value="">Todos os Status</option>
+        <option value="Pendente">Pendente</option>
+        <option value="Em Rota">Em Rota</option>
+        <option value="Entregue">Entregue</option>
+        <option value="Cancelada">Cancelada</option>
+      </select>
+    </div>
+
+    <button (click)="exportToPDF()"
+        class="bg-brand-active text-white px-6 py-2 rounded-xl font-bold text-sm shadow-lg shadow-blue-500/20 hover:bg-blue-600 transition-all active:scale-95">
+        <i class="fa-solid fa-file-pdf mr-2"></i> Exportar PDF
+    </button>
+  </div>
+
+  <div class="overflow-x-auto">
+    <table class="w-full text-left border-separate border-spacing-y-2">
+      <thead>
+        <tr class="text-slate-400 text-xs uppercase tracking-widest">
+          <th class="px-6 py-3">Pedido</th>
+          <th class="px-6 py-3">Cliente</th>
+          <th class="px-6 py-3">Data de Envio</th>
+          <th class="px-6 py-3">Status</th>
+          <th class="px-6 py-3 text-center">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of paginatedData()" class="bg-white hover:bg-slate-50 transition-colors group">
+          <td class="px-6 py-4 rounded-l-2xl font-bold text-brand-dark text-sm border-y border-l border-slate-100 italic">#{{item.id}}</td>
+          <td class="px-6 py-4 text-sm font-medium text-slate-600 border-y border-slate-100">{{item.cliente}}</td>
+          <td class="px-6 py-4 text-sm text-slate-500 border-y border-slate-100">{{item.dataEnvio | date:'dd/MM/yy'}}</td>
+          <td class="px-6 py-4 border-y border-slate-100">
+            <span [class]="getStatusClass(item.status)">{{item.status}}</span>
+          </td>
+          <td class="px-6 py-4 rounded-r-2xl border-y border-r border-slate-100 text-center">
+            <button (click)="openDetails(item)"
+                    class="text-brand-active hover:bg-brand-active/10 px-4 py-2 rounded-lg text-xs font-bold border border-brand-active/20 transition-all">
+              Detalhes
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="flex items-center justify-between pt-4">
+    <span class="text-xs text-slate-500 font-medium">
+      Página {{currentPage()}} de {{totalPages()}}
+    </span>
+    <div class="flex gap-2">
+      <button (click)="currentPage.set(currentPage() - 1)" [disabled]="currentPage() === 1"
+              class="w-10 h-10 rounded-xl border border-slate-200 flex items-center justify-center hover:bg-white disabled:opacity-30 transition-all">
+        <i class="fa-solid fa-chevron-left text-xs"></i>
+      </button>
+      <button *ngFor="let p of [].constructor(totalPages()); let i = index"
+              (click)="currentPage.set(i + 1)"
+              [class]="currentPage() === i + 1 ? 'bg-brand-active text-white border-brand-active' : 'bg-white text-slate-600 border-slate-200'"
+              class="w-10 h-10 rounded-xl border flex items-center justify-center text-xs font-bold transition-all">
+        {{i + 1}}
+      </button>
+      <button (click)="currentPage.set(currentPage() + 1)" [disabled]="currentPage() === totalPages()"
+              class="w-10 h-10 rounded-xl border border-slate-200 flex items-center justify-center hover:bg-white disabled:opacity-30 transition-all">
+        <i class="fa-solid fa-chevron-right text-xs"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<app-delivery-details *ngIf="isModalOpen()"
+                    [delivery]="selectedDelivery()"
+                    (close)="isModalOpen.set(false)"
+                    (saved)="loadDeliveries()">
+</app-delivery-details>

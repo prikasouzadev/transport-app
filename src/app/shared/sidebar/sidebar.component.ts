@@ -13,7 +13,7 @@ export class SidebarComponent {
   menuItems = [
     { label: 'Dashboard', route: '/dashboard', icon: 'fa-solid fa-square' },
     { label: 'Nova Entrega', route: '/new-delivery', icon: 'fa-solid fa-shield-blank' },
-    { label: 'Entregas', route: '/list', icon: 'fa-solid fa-bars-staggered' },
+    { label: 'Entregas', route: '/delivery-list', icon: 'fa-solid fa-bars-staggered' },
     { label: 'Relatórios', route: '/report', icon: 'fa-solid fa-chart-simple' }
   ];
 }

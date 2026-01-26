@@ -1,4 +1,5 @@
 import { DeliveryStatus } from "../type/delivery-status";
+import { DeliveryHistory } from "./delivery-history";
 
 export interface Delivery {
   id: number;
@@ -9,4 +10,5 @@ export interface Delivery {
   produto: string;
   status: DeliveryStatus;
   observacoes?: string;
+  historico: DeliveryHistory[];
 }

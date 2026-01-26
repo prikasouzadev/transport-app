@@ -21,4 +21,8 @@ export class DeliveryService {
   createDelivery(delivery: Partial<Delivery>): Observable<Delivery> {
     return this.http.post<Delivery>(this.apiUrl, delivery);
   }
+
+  updateDelivery(delivery: Delivery): Observable<Delivery> {
+  return this.http.put<Delivery>(`${this.apiUrl}/${delivery.id}`, delivery);
+}
 }

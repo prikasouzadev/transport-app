@@ -1,18 +1,28 @@
 {
   "deliveries": [
     {
-      "id": 123878,
+      "id": "123878",
       "cliente": "Elisa Lanicia",
       "dataEnvio": "2026-01-10",
-      "status": "Pendente",
+      "status": "Entregue",
       "endereco": "Rua das Acácias, 1200 - São Paulo/SP",
       "produto": "Notebook Dell XPS",
       "dataEstimadaEntrega": "2026-01-14",
       "observacoes": "Entregar somente no período da tarde",
-      "historico": [{ "data": "2026-01-10", "status": "Pedido Criado" }]
+      "historico": [
+        {
+          "data": "2026-01-10",
+          "status": "Pedido Criado"
+        },
+        {
+          "data": "2026-01-26",
+          "status": "Entregue"
+        }
+      ],
+      "dataEstimada": "2026-01-13"
     },
     {
-      "id": 123902,
+      "id": "123902",
       "cliente": "Sandra Santos",
       "dataEnvio": "2026-01-08",
       "status": "Em Rota",
@@ -21,13 +31,22 @@
       "dataEstimadaEntrega": "2026-01-13",
       "observacoes": "",
       "historico": [
-        { "data": "2026-01-08", "status": "Pedido Criado" },
-        { "data": "2026-01-09", "status": "Coletado" },
-        { "data": "2026-01-13", "status": "Saiu para entrega" }
+        {
+          "data": "2026-01-08",
+          "status": "Pedido Criado"
+        },
+        {
+          "data": "2026-01-09",
+          "status": "Coletado"
+        },
+        {
+          "data": "2026-01-13",
+          "status": "Saiu para entrega"
+        }
       ]
     },
     {
-      "id": 123938,
+      "id": "123938",
       "cliente": "Beta Conciira",
       "dataEnvio": "2026-01-09",
       "status": "Entregue",
@@ -36,13 +55,22 @@
       "dataEstimadaEntrega": "2026-01-12",
       "observacoes": "Cliente solicitou instalação",
       "historico": [
-        { "data": "2026-01-09", "status": "Pedido Criado" },
-        { "data": "2026-01-10", "status": "Coletado" },
-        { "data": "2026-01-12", "status": "Entregue" }
+        {
+          "data": "2026-01-09",
+          "status": "Pedido Criado"
+        },
+        {
+          "data": "2026-01-10",
+          "status": "Coletado"
+        },
+        {
+          "data": "2026-01-12",
+          "status": "Entregue"
+        }
       ]
     },
     {
-      "id": 124001,
+      "id": "124001",
       "cliente": "Marcos Oliveira",
       "dataEnvio": "2026-01-15",
       "status": "Pendente",
@@ -50,10 +78,15 @@
       "produto": "Cadeira Gamer",
       "dataEstimadaEntrega": "2026-01-20",
       "observacoes": "",
-      "historico": [{ "data": "2026-01-15", "status": "Pedido Criado" }]
+      "historico": [
+        {
+          "data": "2026-01-15",
+          "status": "Pedido Criado"
+        }
+      ]
     },
     {
-      "id": 124002,
+      "id": "124002",
       "cliente": "Ana Julia Lima",
       "dataEnvio": "2026-01-12",
       "status": "Cancelada",
@@ -62,12 +95,18 @@
       "dataEstimadaEntrega": "2026-01-16",
       "observacoes": "Pedido cancelado pelo cliente",
       "historico": [
-        { "data": "2026-01-12", "status": "Pedido Criado" },
-        { "data": "2026-01-13", "status": "Cancelado" }
+        {
+          "data": "2026-01-12",
+          "status": "Pedido Criado"
+        },
+        {
+          "data": "2026-01-13",
+          "status": "Cancelado"
+        }
       ]
     },
     {
-      "id": 124003,
+      "id": "124003",
       "cliente": "Ricardo Pereira",
       "dataEnvio": "2026-01-14",
       "status": "Em Rota",
@@ -76,12 +115,18 @@
       "dataEstimadaEntrega": "2026-01-18",
       "observacoes": "Cuidado, produto frágil",
       "historico": [
-        { "data": "2026-01-14", "status": "Pedido Criado" },
-        { "data": "2026-01-15", "status": "Coletado" }
+        {
+          "data": "2026-01-14",
+          "status": "Pedido Criado"
+        },
+        {
+          "data": "2026-01-15",
+          "status": "Coletado"
+        }
       ]
     },
     {
-      "id": 124004,
+      "id": "124004",
       "cliente": "Juliana Costa",
       "dataEnvio": "2026-01-11",
       "status": "Entregue",
@@ -90,12 +135,18 @@
       "dataEstimadaEntrega": "2026-01-14",
       "observacoes": "Deixar na portaria",
       "historico": [
-        { "data": "2026-01-11", "status": "Pedido Criado" },
-        { "data": "2026-01-14", "status": "Entregue" }
+        {
+          "data": "2026-01-11",
+          "status": "Pedido Criado"
+        },
+        {
+          "data": "2026-01-14",
+          "status": "Entregue"
+        }
       ]
     },
     {
-      "id": 124005,
+      "id": "124005",
       "cliente": "Gabriel Souza",
       "dataEnvio": "2026-01-16",
       "status": "Pendente",
@@ -103,10 +154,15 @@
       "produto": "Headset HyperX",
       "dataEstimadaEntrega": "2026-01-21",
       "observacoes": "",
-      "historico": [{ "data": "2026-01-16", "status": "Pedido Criado" }]
+      "historico": [
+        {
+          "data": "2026-01-16",
+          "status": "Pedido Criado"
+        }
+      ]
     },
     {
-      "id": 124006,
+      "id": "124006",
       "cliente": "Fernanda Lima",
       "dataEnvio": "2026-01-10",
       "status": "Em Rota",
@@ -115,12 +171,18 @@
       "dataEstimadaEntrega": "2026-01-17",
       "observacoes": "Apartamento 402",
       "historico": [
-        { "data": "2026-01-10", "status": "Pedido Criado" },
-        { "data": "2026-01-12", "status": "Coletado" }
+        {
+          "data": "2026-01-10",
+          "status": "Pedido Criado"
+        },
+        {
+          "data": "2026-01-12",
+          "status": "Coletado"
+        }
       ]
     },
     {
-      "id": 124007,
+      "id": "124007",
       "cliente": "Bruno Alves",
       "dataEnvio": "2026-01-05",
       "status": "Entregue",
@@ -129,23 +191,39 @@
       "dataEstimadaEntrega": "2026-01-09",
       "observacoes": "",
       "historico": [
-        { "data": "2026-01-05", "status": "Pedido Criado" },
-        { "data": "2026-01-09", "status": "Entregue" }
+        {
+          "data": "2026-01-05",
+          "status": "Pedido Criado"
+        },
+        {
+          "data": "2026-01-09",
+          "status": "Entregue"
+        }
       ]
     },
     {
-      "id": 124008,
+      "id": "124008",
       "cliente": "Lucas Mendes",
       "dataEnvio": "2026-01-18",
-      "status": "Pendente",
+      "status": "Em Rota",
       "endereco": "Av. Caxangá, 100 - Recife/PE",
       "produto": "Mouse Gamer Razer",
       "dataEstimadaEntrega": "2026-01-22",
       "observacoes": "",
-      "historico": [{ "data": "2026-01-18", "status": "Pedido Criado" }]
+      "historico": [
+        {
+          "data": "2026-01-18",
+          "status": "Pedido Criado"
+        },
+        {
+          "data": "2026-01-26",
+          "status": "Em Rota"
+        }
+      ],
+      "dataEstimada": "2026-01-21"
     },
     {
-      "id": 124009,
+      "id": "124009",
       "cliente": "Amanda Rocha",
       "dataEnvio": "2026-01-14",
       "status": "Cancelada",
@@ -153,10 +231,15 @@
       "produto": "Placa de Vídeo RTX 4060",
       "dataEstimadaEntrega": "2026-01-19",
       "observacoes": "Erro no processamento do pagamento",
-      "historico": [{ "data": "2026-01-14", "status": "Cancelado" }]
+      "historico": [
+        {
+          "data": "2026-01-14",
+          "status": "Cancelado"
+        }
+      ]
     },
     {
-      "id": 124010,
+      "id": "124010",
       "cliente": "Patrícia Gomes",
       "dataEnvio": "2026-01-12",
       "status": "Em Rota",
@@ -165,12 +248,18 @@
       "dataEstimadaEntrega": "2026-01-16",
       "observacoes": "Interfone com defeito",
       "historico": [
-        { "data": "2026-01-12", "status": "Pedido Criado" },
-        { "data": "2026-01-15", "status": "Coletado" }
+        {
+          "data": "2026-01-12",
+          "status": "Pedido Criado"
+        },
+        {
+          "data": "2026-01-15",
+          "status": "Coletado"
+        }
       ]
     },
     {
-      "id": 124011,
+      "id": "124011",
       "cliente": "Rodrigo Silva",
       "dataEnvio": "2026-01-07",
       "status": "Entregue",
@@ -179,12 +268,18 @@
       "dataEstimadaEntrega": "2026-01-13",
       "observacoes": "",
       "historico": [
-        { "data": "2026-01-07", "status": "Pedido Criado" },
-        { "data": "2026-01-13", "status": "Entregue" }
+        {
+          "data": "2026-01-07",
+          "status": "Pedido Criado"
+        },
+        {
+          "data": "2026-01-13",
+          "status": "Entregue"
+        }
       ]
     },
     {
-      "id": 124012,
+      "id": "124012",
       "cliente": "Camila Duarte",
       "dataEnvio": "2026-01-19",
       "status": "Pendente",
@@ -192,10 +287,15 @@
       "produto": "Mesa Digitalizadora",
       "dataEstimadaEntrega": "2026-01-24",
       "observacoes": "",
-      "historico": [{ "data": "2026-01-19", "status": "Pedido Criado" }]
+      "historico": [
+        {
+          "data": "2026-01-19",
+          "status": "Pedido Criado"
+        }
+      ]
     },
     {
-      "id": 124013,
+      "id": "124013",
       "cliente": "Felipe Matos",
       "dataEnvio": "2026-01-11",
       "status": "Em Rota",
@@ -204,12 +304,18 @@
       "dataEstimadaEntrega": "2026-01-15",
       "observacoes": "",
       "historico": [
-        { "data": "2026-01-11", "status": "Pedido Criado" },
-        { "data": "2026-01-14", "status": "Coletado" }
+        {
+          "data": "2026-01-11",
+          "status": "Pedido Criado"
+        },
+        {
+          "data": "2026-01-14",
+          "status": "Coletado"
+        }
       ]
     },
     {
-      "id": 124014,
+      "id": "124014",
       "cliente": "Letícia Pinheiro",
       "dataEnvio": "2026-01-08",
       "status": "Entregue",
@@ -218,12 +324,18 @@
       "dataEstimadaEntrega": "2026-01-11",
       "observacoes": "Entregar para o porteiro Sr. José",
       "historico": [
-        { "data": "2026-01-08", "status": "Pedido Criado" },
-        { "data": "2026-01-11", "status": "Entregue" }
+        {
+          "data": "2026-01-08",
+          "status": "Pedido Criado"
+        },
+        {
+          "data": "2026-01-11",
+          "status": "Entregue"
+        }
       ]
     },
     {
-      "id": 124015,
+      "id": "124015",
       "cliente": "Gustavo Henrique",
       "dataEnvio": "2026-01-20",
       "status": "Pendente",
@@ -231,10 +343,15 @@
       "produto": "SSD 1TB NVMe",
       "dataEstimadaEntrega": "2026-01-23",
       "observacoes": "",
-      "historico": [{ "data": "2026-01-20", "status": "Pedido Criado" }]
+      "historico": [
+        {
+          "data": "2026-01-20",
+          "status": "Pedido Criado"
+        }
+      ]
     },
     {
-      "id": 124016,
+      "id": "124016",
       "cliente": "Beatriz Santos",
       "dataEnvio": "2026-01-13",
       "status": "Em Rota",
@@ -243,12 +360,18 @@
       "dataEstimadaEntrega": "2026-01-17",
       "observacoes": "",
       "historico": [
-        { "data": "2026-01-13", "status": "Pedido Criado" },
-        { "data": "2026-01-16", "status": "Coletado" }
+        {
+          "data": "2026-01-13",
+          "status": "Pedido Criado"
+        },
+        {
+          "data": "2026-01-16",
+          "status": "Coletado"
+        }
       ]
     },
     {
-      "id": 124017,
+      "id": "124017",
       "cliente": "Thiago Souza",
       "dataEnvio": "2026-01-06",
       "status": "Entregue",
@@ -257,8 +380,14 @@
       "dataEstimadaEntrega": "2026-01-10",
       "observacoes": "",
       "historico": [
-        { "data": "2026-01-06", "status": "Pedido Criado" },
-        { "data": "2026-01-10", "status": "Entregue" }
+        {
+          "data": "2026-01-06",
+          "status": "Pedido Criado"
+        },
+        {
+          "data": "2026-01-10",
+          "status": "Entregue"
+        }
       ]
     }
   ]
