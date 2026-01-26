@@ -1,0 +1,57 @@
+<aside class="w-64 h-full bg-brand-dark text-gray-400 flex flex-col py-8 shadow-2xl transition-all">
+
+  <div class="px-6 mb-12 flex ">
+    <div class="bg-brand-active text-white w-20 h-20 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/30 transform hover:scale-105 transition-transform duration-300">
+      <i class="fa-solid fa-truck-fast text-4xl"></i>
+    </div>
+  </div>
+
+  <nav class="flex-1 px-3 space-y-2">
+    <div class="mb-6">
+      <p class="px-4 text-[10px] uppercase tracking-[0.2em] text-gray-500 mb-4 font-bold opacity-50">Logística</p>
+
+      <a routerLink="/list" routerLinkActive="bg-brand-active text-white shadow-md shadow-blue-500/20"
+         class="flex items-center gap-3 px-4 py-3.5 rounded-xl transition-all hover:bg-white/5 hover:text-white group">
+        <div class="w-8 flex justify-center">
+          <i class="fa-solid fa-box text-lg"></i>
+        </div>
+        <span class="text-sm font-semibold">Entregas</span>
+      </a>
+
+      <a routerLink="/new-delivery" routerLinkActive="bg-brand-active text-white shadow-md shadow-blue-500/20"
+         class="flex items-center gap-3 px-4 py-3.5 rounded-xl transition-all hover:bg-white/5 hover:text-white group">
+        <div class="w-8 flex justify-center">
+          <i class="fa-solid fa-circle-plus text-lg"></i>
+        </div>
+        <span class="text-sm font-semibold">Nova Entrega</span>
+      </a>
+    </div>
+
+    <div class="mb-4">
+      <p class="px-4 text-[10px] uppercase tracking-[0.2em] text-gray-500 mb-4 font-bold opacity-50">Análise</p>
+
+      <a routerLink="/dashboard" routerLinkActive="bg-brand-active text-white shadow-md shadow-blue-500/20"
+         class="flex items-center gap-3 px-4 py-3.5 rounded-xl transition-all hover:bg-white/5 hover:text-white group">
+        <div class="w-8 flex justify-center">
+          <i class="fa-solid fa-chart-pie text-lg"></i>
+        </div>
+        <span class="text-sm font-semibold">Dashboard</span>
+      </a>
+
+      <a routerLink="/report" routerLinkActive="bg-brand-active text-white shadow-md shadow-blue-500/20"
+         class="flex items-center gap-3 px-4 py-3.5 rounded-xl transition-all hover:bg-white/5 hover:text-white group">
+        <div class="w-8 flex justify-center">
+          <i class="fa-solid fa-file-lines text-lg"></i>
+        </div>
+        <span class="text-sm font-semibold">Relatórios</span>
+      </a>
+    </div>
+  </nav>
+
+  <div class="px-4 pt-4 mt-auto border-t border-white/5">
+    <button class="w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-red-500/10 hover:text-red-400 transition-colors text-gray-500">
+      <i class="fa-solid fa-right-from-bracket"></i>
+      <span class="text-sm font-bold">Sair do Sistema</span>
+    </button>
+  </div>
+</aside>

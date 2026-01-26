@@ -1,0 +1,265 @@
+{
+  "deliveries": [
+    {
+      "id": 123878,
+      "cliente": "Elisa Lanicia",
+      "dataEnvio": "2026-01-10",
+      "status": "Pendente",
+      "endereco": "Rua das Acácias, 1200 - São Paulo/SP",
+      "produto": "Notebook Dell XPS",
+      "dataEstimadaEntrega": "2026-01-14",
+      "observacoes": "Entregar somente no período da tarde",
+      "historico": [{ "data": "2026-01-10", "status": "Pedido Criado" }]
+    },
+    {
+      "id": 123902,
+      "cliente": "Sandra Santos",
+      "dataEnvio": "2026-01-08",
+      "status": "Em Rota",
+      "endereco": "Av. Paulista, 400 - São Paulo/SP",
+      "produto": "Smartphone Samsung S23",
+      "dataEstimadaEntrega": "2026-01-13",
+      "observacoes": "",
+      "historico": [
+        { "data": "2026-01-08", "status": "Pedido Criado" },
+        { "data": "2026-01-09", "status": "Coletado" },
+        { "data": "2026-01-13", "status": "Saiu para entrega" }
+      ]
+    },
+    {
+      "id": 123938,
+      "cliente": "Beta Conciira",
+      "dataEnvio": "2026-01-09",
+      "status": "Entregue",
+      "endereco": "Rua Flores Belas, 777 - Curitiba/PR",
+      "produto": "Monitor LG UltraWide",
+      "dataEstimadaEntrega": "2026-01-12",
+      "observacoes": "Cliente solicitou instalação",
+      "historico": [
+        { "data": "2026-01-09", "status": "Pedido Criado" },
+        { "data": "2026-01-10", "status": "Coletado" },
+        { "data": "2026-01-12", "status": "Entregue" }
+      ]
+    },
+    {
+      "id": 124001,
+      "cliente": "Marcos Oliveira",
+      "dataEnvio": "2026-01-15",
+      "status": "Pendente",
+      "endereco": "Rua Bahia, 50 - Belo Horizonte/MG",
+      "produto": "Cadeira Gamer",
+      "dataEstimadaEntrega": "2026-01-20",
+      "observacoes": "",
+      "historico": [{ "data": "2026-01-15", "status": "Pedido Criado" }]
+    },
+    {
+      "id": 124002,
+      "cliente": "Ana Julia Lima",
+      "dataEnvio": "2026-01-12",
+      "status": "Cancelada",
+      "endereco": "Rua do Sol, 12 - Recife/PE",
+      "produto": "Cafeteira Nespresso",
+      "dataEstimadaEntrega": "2026-01-16",
+      "observacoes": "Pedido cancelado pelo cliente",
+      "historico": [
+        { "data": "2026-01-12", "status": "Pedido Criado" },
+        { "data": "2026-01-13", "status": "Cancelado" }
+      ]
+    },
+    {
+      "id": 124003,
+      "cliente": "Ricardo Pereira",
+      "dataEnvio": "2026-01-14",
+      "status": "Em Rota",
+      "endereco": "Av. Brasil, 1500 - Rio de Janeiro/RJ",
+      "produto": "Teclado Mecânico RGB",
+      "dataEstimadaEntrega": "2026-01-18",
+      "observacoes": "Cuidado, produto frágil",
+      "historico": [
+        { "data": "2026-01-14", "status": "Pedido Criado" },
+        { "data": "2026-01-15", "status": "Coletado" }
+      ]
+    },
+    {
+      "id": 124004,
+      "cliente": "Juliana Costa",
+      "dataEnvio": "2026-01-11",
+      "status": "Entregue",
+      "endereco": "Rua das Palmeiras, 88 - Porto Alegre/RS",
+      "produto": "Kindle Paperwhite",
+      "dataEstimadaEntrega": "2026-01-14",
+      "observacoes": "Deixar na portaria",
+      "historico": [
+        { "data": "2026-01-11", "status": "Pedido Criado" },
+        { "data": "2026-01-14", "status": "Entregue" }
+      ]
+    },
+    {
+      "id": 124005,
+      "cliente": "Gabriel Souza",
+      "dataEnvio": "2026-01-16",
+      "status": "Pendente",
+      "endereco": "Rua Augusta, 900 - São Paulo/SP",
+      "produto": "Headset HyperX",
+      "dataEstimadaEntrega": "2026-01-21",
+      "observacoes": "",
+      "historico": [{ "data": "2026-01-16", "status": "Pedido Criado" }]
+    },
+    {
+      "id": 124006,
+      "cliente": "Fernanda Lima",
+      "dataEnvio": "2026-01-10",
+      "status": "Em Rota",
+      "endereco": "Av. Sete de Setembro, 200 - Salvador/BA",
+      "produto": "Smart TV 55 pol",
+      "dataEstimadaEntrega": "2026-01-17",
+      "observacoes": "Apartamento 402",
+      "historico": [
+        { "data": "2026-01-10", "status": "Pedido Criado" },
+        { "data": "2026-01-12", "status": "Coletado" }
+      ]
+    },
+    {
+      "id": 124007,
+      "cliente": "Bruno Alves",
+      "dataEnvio": "2026-01-05",
+      "status": "Entregue",
+      "endereco": "Rua Goiás, 33 - Goiânia/GO",
+      "produto": "Roteador Wi-Fi 6",
+      "dataEstimadaEntrega": "2026-01-09",
+      "observacoes": "",
+      "historico": [
+        { "data": "2026-01-05", "status": "Pedido Criado" },
+        { "data": "2026-01-09", "status": "Entregue" }
+      ]
+    },
+    {
+      "id": 124008,
+      "cliente": "Lucas Mendes",
+      "dataEnvio": "2026-01-18",
+      "status": "Pendente",
+      "endereco": "Av. Caxangá, 100 - Recife/PE",
+      "produto": "Mouse Gamer Razer",
+      "dataEstimadaEntrega": "2026-01-22",
+      "observacoes": "",
+      "historico": [{ "data": "2026-01-18", "status": "Pedido Criado" }]
+    },
+    {
+      "id": 124009,
+      "cliente": "Amanda Rocha",
+      "dataEnvio": "2026-01-14",
+      "status": "Cancelada",
+      "endereco": "Rua 24 de Maio, 500 - Curitiba/PR",
+      "produto": "Placa de Vídeo RTX 4060",
+      "dataEstimadaEntrega": "2026-01-19",
+      "observacoes": "Erro no processamento do pagamento",
+      "historico": [{ "data": "2026-01-14", "status": "Cancelado" }]
+    },
+    {
+      "id": 124010,
+      "cliente": "Patrícia Gomes",
+      "dataEnvio": "2026-01-12",
+      "status": "Em Rota",
+      "endereco": "Rua XV de Novembro, 10 - Joinville/SC",
+      "produto": "Microfone Condensador",
+      "dataEstimadaEntrega": "2026-01-16",
+      "observacoes": "Interfone com defeito",
+      "historico": [
+        { "data": "2026-01-12", "status": "Pedido Criado" },
+        { "data": "2026-01-15", "status": "Coletado" }
+      ]
+    },
+    {
+      "id": 124011,
+      "cliente": "Rodrigo Silva",
+      "dataEnvio": "2026-01-07",
+      "status": "Entregue",
+      "endereco": "Av. Independência, 45 - Belém/PA",
+      "produto": "Webcam 4K",
+      "dataEstimadaEntrega": "2026-01-13",
+      "observacoes": "",
+      "historico": [
+        { "data": "2026-01-07", "status": "Pedido Criado" },
+        { "data": "2026-01-13", "status": "Entregue" }
+      ]
+    },
+    {
+      "id": 124012,
+      "cliente": "Camila Duarte",
+      "dataEnvio": "2026-01-19",
+      "status": "Pendente",
+      "endereco": "Rua Chile, 200 - Natal/RN",
+      "produto": "Mesa Digitalizadora",
+      "dataEstimadaEntrega": "2026-01-24",
+      "observacoes": "",
+      "historico": [{ "data": "2026-01-19", "status": "Pedido Criado" }]
+    },
+    {
+      "id": 124013,
+      "cliente": "Felipe Matos",
+      "dataEnvio": "2026-01-11",
+      "status": "Em Rota",
+      "endereco": "Rua do Comércio, 5 - Vitória/ES",
+      "produto": "Suporte para Monitor",
+      "dataEstimadaEntrega": "2026-01-15",
+      "observacoes": "",
+      "historico": [
+        { "data": "2026-01-11", "status": "Pedido Criado" },
+        { "data": "2026-01-14", "status": "Coletado" }
+      ]
+    },
+    {
+      "id": 124014,
+      "cliente": "Letícia Pinheiro",
+      "dataEnvio": "2026-01-08",
+      "status": "Entregue",
+      "endereco": "Av. Afonso Pena, 300 - Campo Grande/MS",
+      "produto": "Carregador Portátil",
+      "dataEstimadaEntrega": "2026-01-11",
+      "observacoes": "Entregar para o porteiro Sr. José",
+      "historico": [
+        { "data": "2026-01-08", "status": "Pedido Criado" },
+        { "data": "2026-01-11", "status": "Entregue" }
+      ]
+    },
+    {
+      "id": 124015,
+      "cliente": "Gustavo Henrique",
+      "dataEnvio": "2026-01-20",
+      "status": "Pendente",
+      "endereco": "Rua das Laranjeiras, 10 - Rio de Janeiro/RJ",
+      "produto": "SSD 1TB NVMe",
+      "dataEstimadaEntrega": "2026-01-23",
+      "observacoes": "",
+      "historico": [{ "data": "2026-01-20", "status": "Pedido Criado" }]
+    },
+    {
+      "id": 124016,
+      "cliente": "Beatriz Santos",
+      "dataEnvio": "2026-01-13",
+      "status": "Em Rota",
+      "endereco": "Rua Amarela, 44 - Brasília/DF",
+      "produto": "Luminária Inteligente",
+      "dataEstimadaEntrega": "2026-01-17",
+      "observacoes": "",
+      "historico": [
+        { "data": "2026-01-13", "status": "Pedido Criado" },
+        { "data": "2026-01-16", "status": "Coletado" }
+      ]
+    },
+    {
+      "id": 124017,
+      "cliente": "Thiago Souza",
+      "dataEnvio": "2026-01-06",
+      "status": "Entregue",
+      "endereco": "Av. João Pessoa, 50 - Fortaleza/CE",
+      "produto": "Hub USB-C",
+      "dataEstimadaEntrega": "2026-01-10",
+      "observacoes": "",
+      "historico": [
+        { "data": "2026-01-06", "status": "Pedido Criado" },
+        { "data": "2026-01-10", "status": "Entregue" }
+      ]
+    }
+  ]
+}
