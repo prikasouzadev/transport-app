@@ -1,0 +1,87 @@
+<div class="p-8 space-y-8">
+  <h1 class="text-2xl font-bold text-brand-dark">Resumo de Operações</h1>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4">
+
+    <div class="bg-white p-5 rounded-3xl border border-slate-100 shadow-sm">
+      <p class="text-[10px] font-bold text-slate-400 uppercase">Total</p>
+      <h2 class="text-2xl font-black text-brand-dark mt-1">{{stats().total}}</h2>
+    </div>
+
+    <div class="bg-yellow-50 p-5 rounded-3xl border border-yellow-100 shadow-sm">
+      <p class="text-[10px] font-bold text-yellow-700 uppercase">Pendentes</p>
+      <h2 class="text-2xl font-black text-yellow-700 mt-1">{{stats().pendentes}}</h2>
+    </div>
+
+    <div class="bg-blue-50 p-5 rounded-3xl border border-blue-100 shadow-sm">
+      <p class="text-[10px] font-bold text-blue-700 uppercase">Em Rota</p>
+      <h2 class="text-2xl font-black text-blue-700 mt-1">{{stats().emRota}}</h2>
+    </div>
+
+    <div class="bg-green-50 p-5 rounded-3xl border border-green-100 shadow-sm">
+      <p class="text-[10px] font-bold text-green-700 uppercase">Entregues</p>
+      <h2 class="text-2xl font-black text-green-700 mt-1">{{stats().entregues}}</h2>
+    </div>
+
+    <div class="bg-red-50 p-5 rounded-3xl border border-red-100 shadow-sm">
+      <p class="text-[10px] font-bold text-red-700 uppercase">Canceladas</p>
+      <h2 class="text-2xl font-black text-red-700 mt-1">{{stats().canceladas}}</h2>
+    </div>
+
+    <div class="bg-brand-active p-5 rounded-3xl shadow-lg shadow-blue-500/20 text-white">
+      <p class="text-[10px] font-bold opacity-80 uppercase">Novas Hoje</p>
+      <h2 class="text-2xl font-black mt-1">{{stats().novas}}</h2>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <div class="bg-white p-8 rounded-[40px] shadow-sm border border-slate-50 flex flex-col items-center">
+      <h3 class="text-sm font-bold text-slate-700 self-start mb-6">Distribuição por Status</h3>
+
+      <div class="relative w-48 h-48 mb-6">
+        <canvas #statusChart></canvas>
+        <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+          <span class="text-2xl font-black text-brand-dark">{{stats().total}}</span>
+          <span class="text-[9px] uppercase font-bold text-slate-400">Entregas</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4 w-full">
+        <div class="flex items-center gap-2">
+          <div class="w-3 h-3 rounded-full bg-[#fef08a]"></div>
+          <span class="text-xs font-medium text-slate-600">Pendente</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="w-3 h-3 rounded-full bg-[#bfdbfe]"></div>
+          <span class="text-xs font-medium text-slate-600">Em Rota</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="w-3 h-3 rounded-full bg-[#bbf7d0]"></div>
+          <span class="text-xs font-medium text-slate-600">Entregue</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="w-3 h-3 rounded-full bg-[#fecaca]"></div>
+          <span class="text-xs font-medium text-slate-600">Cancelada</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-2 bg-[#021024] p-8 rounded-[40px] text-white">
+       <h3 class="font-bold text-lg mb-1">Performance da Frota</h3>
+       <p class="text-xs text-slate-400 mb-8">Volume de movimentações semanais</p>
+
+       <div class="flex items-end justify-between h-40 gap-3">
+         <div *ngFor="let h of [30, 55, 40, 85, 50, 75, 60]"
+              [style.height.%]="h"
+              class="flex-1 bg-blue-500/40 hover:bg-brand-active rounded-t-lg transition-all cursor-help relative group">
+           <div class="absolute -top-10 left-1/2 -translate-x-1/2 bg-white text-brand-dark text-[10px] p-2 rounded shadow-xl opacity-0 group-hover:opacity-100 transition-all">
+             {{h}}% Eficiência
+           </div>
+         </div>
+       </div>
+       <div class="flex justify-between mt-4 text-[10px] text-slate-500 font-bold uppercase tracking-widest">
+         <span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sab</span><span>Dom</span>
+       </div>
+    </div>
+  </div>
+</div>
