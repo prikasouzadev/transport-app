@@ -2,6 +2,7 @@
   <header class="p-8 pb-4">
     <h1 class="text-2xl font-bold text-slate-800">Gerenciamento de Transportes</h1>
     <p class="text-sm text-slate-500 mt-1">Controle e monitoramento de cargas em tempo real.</p>
+
   </header>
 
   <div class="px-8 flex-1 flex flex-col overflow-hidden">
@@ -13,6 +14,13 @@
               class="px-8 py-3 rounded-t-2xl text-sm font-semibold text-slate-400 hover:text-slate-600 transition-all bg-slate-200/50">
         {{ tab.label }}
       </button>
+      <div class="pb-2 "> <button
+        routerLink="/new-delivery"
+        class="bg-brand-active text-white px-6 py-2.5 rounded-xl font-bold text-sm shadow-lg shadow-blue-500/20 hover:bg-blue-600 transition-all active:scale-95 flex items-center">
+        <i class="fa-solid fa-plus mr-2 text-xs"></i>
+        Nova Entrega
+      </button>
+    </div>
     </div>
 
     <div class="flex-1 bg-white rounded-tr-3xl rounded-b-3xl shadow-sm border border-slate-100 p-6 overflow-y-auto">
