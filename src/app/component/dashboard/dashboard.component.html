@@ -1,121 +1,106 @@
-<div class="p-8 space-y-8 animate-in fade-in duration-500">
+<div class="p-4 md:p-8 space-y-6 md:space-y-8 animate-in fade-in duration-500">
 
-  <div class="flex justify-between items-center border-b border-slate-100 pb-6">
+  <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-slate-100 pb-6 gap-4">
     <div>
-      <h1 class="text-2xl font-bold text-brand-dark">Resumo de Operações</h1>
-      <p class="text-xs text-slate-400 font-medium">Indicadores de performance e movimentação em tempo real</p>
+      <h1 class="text-xl md:text-2xl font-bold text-brand-dark">Resumo de Operações</h1>
+      <p class="text-[10px] md:text-xs text-slate-400 font-medium">Indicadores de performance e movimentação em tempo real</p>
     </div>
-    <div class="flex items-center gap-2 text-slate-400 text-[10px] font-bold uppercase tracking-widest">
+    <div class="flex items-center gap-2 text-slate-400 text-[9px] md:text-[10px] font-bold uppercase tracking-widest bg-slate-50 px-3 py-1.5 rounded-full md:bg-transparent md:p-0">
       <i class="fa-solid fa-calendar-day"></i>
       {{ (deliveries()[0]?.dataEnvio | date:'longDate') || 'Status Atual' }}
     </div>
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6">
+  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
 
-    <div class="bg-white p-6 rounded-[32px] border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
-      <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Total Geral</span>
-      <h3 class="text-3xl font-black text-brand-dark mt-2">{{stats().total}}</h3>
-
+    <div class="bg-white p-5 md:p-6 rounded-[24px] md:rounded-[32px] border border-slate-100 shadow-sm">
+      <span class="text-[9px] md:text-[10px] font-black text-slate-400 uppercase tracking-widest">Total Geral</span>
+      <h3 class="text-2xl md:text-3xl font-black text-brand-dark mt-2">{{stats().total}}</h3>
     </div>
 
-    <div class="bg-white p-6 rounded-[32px] border border-slate-100 shadow-sm">
-      <span class="text-[10px] font-black text-yellow-600 uppercase tracking-widest">Pendentes</span>
-      <h3 class="text-3xl font-black text-yellow-500 mt-2">{{stats().pendentes}}</h3>
-      <p class="text-[10px] text-slate-400 mt-2 font-medium">Aguardando saída</p>
+    <div class="bg-white p-5 md:p-6 rounded-[24px] md:rounded-[32px] border border-slate-100 shadow-sm">
+      <span class="text-[9px] md:text-[10px] font-black text-yellow-600 uppercase tracking-widest">Pendentes</span>
+      <h3 class="text-2xl md:text-3xl font-black text-yellow-500 mt-2">{{stats().pendentes}}</h3>
     </div>
 
-    <div class="bg-white p-6 rounded-[32px] border border-slate-100 shadow-sm">
-      <span class="text-[10px] font-black text-blue-600 uppercase tracking-widest">Em Rota</span>
-      <h3 class="text-3xl font-black text-blue-500 mt-2">{{stats().emRota}}</h3>
-      <p class="text-[10px] text-slate-400 mt-2 font-medium">Cargas em trânsito</p>
+    <div class="bg-white p-5 md:p-6 rounded-[24px] md:rounded-[32px] border border-slate-100 shadow-sm">
+      <span class="text-[9px] md:text-[10px] font-black text-blue-600 uppercase tracking-widest">Em Rota</span>
+      <h3 class="text-2xl md:text-3xl font-black text-blue-500 mt-2">{{stats().emRota}}</h3>
     </div>
 
-    <div class="bg-white p-6 rounded-[32px] border border-slate-100 shadow-sm">
-      <span class="text-[10px] font-black text-green-600 uppercase tracking-widest">Finalizadas</span>
-      <h3 class="text-3xl font-black text-green-500 mt-2">{{stats().entregues}}</h3>
-      <p class="text-[10px] text-slate-400 mt-2 font-medium">Sucesso na entrega</p>
+    <div class="bg-white p-5 md:p-6 rounded-[24px] md:rounded-[32px] border border-slate-100 shadow-sm">
+      <span class="text-[9px] md:text-[10px] font-black text-green-600 uppercase tracking-widest">Finalizadas</span>
+      <h3 class="text-2xl md:text-3xl font-black text-green-500 mt-2">{{stats().entregues}}</h3>
     </div>
 
-    <div class="bg-white p-6 rounded-[32px] border border-slate-100 shadow-sm">
-      <span class="text-[10px] font-black text-red-600 uppercase tracking-widest">Canceladas</span>
-      <h3 class="text-3xl font-black text-red-500 mt-2">{{stats().canceladas}}</h3>
-      <p class="text-[10px] text-slate-400 mt-2 font-medium">Extravio ou retorno</p>
+    <div class="bg-white p-5 md:p-6 rounded-[24px] md:rounded-[32px] border border-slate-100 shadow-sm">
+      <span class="text-[9px] md:text-[10px] font-black text-red-600 uppercase tracking-widest">Canceladas</span>
+      <h3 class="text-2xl md:text-3xl font-black text-red-500 mt-2">{{stats().canceladas}}</h3>
     </div>
 
-    <div class="bg-brand-active p-6 rounded-[32px] shadow-lg shadow-blue-500/30 text-white relative overflow-hidden group">
+    <div class="bg-brand-active p-5 md:p-6 rounded-[24px] md:rounded-[32px] shadow-lg shadow-blue-500/30 text-white relative overflow-hidden">
       <div class="relative z-10">
-        <span class="text-[10px] font-black opacity-70 uppercase tracking-widest">Novas Hoje</span>
-        <h3 class="text-3xl font-black mt-2">{{stats().novas}}</h3>
-        <p class="text-[10px] mt-2 font-bold flex items-center gap-1">
-          <i class="fa-solid fa-arrow-trend-up"></i> Atualizado agora
-        </p>
+        <span class="text-[9px] md:text-[10px] font-black opacity-70 uppercase tracking-widest">Novas Hoje</span>
+        <h3 class="text-2xl md:text-3xl font-black mt-1 md:mt-2">{{stats().novas}}</h3>
       </div>
-      <div class="absolute -right-4 -bottom-4 w-20 h-20 bg-white/10 rounded-full group-hover:scale-150 transition-transform duration-700"></div>
+      <div class="absolute -right-4 -bottom-4 w-16 h-16 bg-white/10 rounded-full"></div>
     </div>
   </div>
 
-  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
 
-    <div class="bg-white p-8 rounded-[40px] shadow-sm border border-slate-50 flex flex-col items-center">
-      <div class="w-full mb-8">
-        <h3 class="font-bold text-slate-700">Distribuição por Status</h3>
-        <p class="text-[10px] text-slate-400 uppercase font-bold tracking-widest">Divisão percentual</p>
+    <div class="bg-white p-6 md:p-8 rounded-[32px] md:rounded-[40px] shadow-sm border border-slate-50 flex flex-col items-center">
+      <div class="w-full mb-6">
+        <h3 class="font-bold text-slate-700">Distribuição</h3>
+        <p class="text-[9px] md:text-[10px] text-slate-400 uppercase font-bold tracking-widest">Divisão por status</p>
       </div>
 
-      <div class="relative w-48 h-48 mb-8">
+      <div class="relative w-40 h-40 md:w-48 md:h-48 mb-6">
         <canvas #statusChart></canvas>
         <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-          <span class="text-3xl font-black text-brand-dark">{{stats().total}}</span>
-          <span class="text-[9px] uppercase font-black text-slate-400">Total</span>
+          <span class="text-2xl md:text-3xl font-black text-brand-dark">{{stats().total}}</span>
+          <span class="text-[8px] md:text-[9px] uppercase font-black text-slate-400">Total</span>
         </div>
       </div>
 
-      <div class="grid grid-cols-2 gap-x-8 gap-y-3 w-full border-t border-slate-50 pt-6">
-        <div class="flex items-center gap-3">
-          <div class="w-2.5 h-2.5 rounded-full bg-[#fef08a]"></div>
-          <span class="text-[11px] font-bold text-slate-500">Pendentes</span>
+      <div class="grid grid-cols-2 gap-x-4 gap-y-3 w-full border-t border-slate-50 pt-6">
+        <div class="flex items-center gap-2">
+          <div class="w-2 h-2 rounded-full bg-[#fef08a]"></div>
+          <span class="text-[10px] font-bold text-slate-500">Pendente</span>
         </div>
-        <div class="flex items-center gap-3">
-          <div class="w-2.5 h-2.5 rounded-full bg-[#bfdbfe]"></div>
-          <span class="text-[11px] font-bold text-slate-500">Em Rota</span>
+        <div class="flex items-center gap-2">
+          <div class="w-2 h-2 rounded-full bg-[#bfdbfe]"></div>
+          <span class="text-[10px] font-bold text-slate-500">Em Rota</span>
         </div>
-        <div class="flex items-center gap-3">
-          <div class="w-2.5 h-2.5 rounded-full bg-[#bbf7d0]"></div>
-          <span class="text-[11px] font-bold text-slate-500">Entregue</span>
+        <div class="flex items-center gap-2">
+          <div class="w-2 h-2 rounded-full bg-[#bbf7d0]"></div>
+          <span class="text-[10px] font-bold text-slate-500">Entregue</span>
         </div>
-        <div class="flex items-center gap-3">
-          <div class="w-2.5 h-2.5 rounded-full bg-[#fecaca]"></div>
-          <span class="text-[11px] font-bold text-slate-500">Cancelada</span>
+        <div class="flex items-center gap-2">
+          <div class="w-2 h-2 rounded-full bg-[#fecaca]"></div>
+          <span class="text-[10px] font-bold text-slate-500">Cancelada</span>
         </div>
       </div>
     </div>
 
-    <div class="lg:col-span-2 bg-[#021024] p-8 rounded-[40px] text-white shadow-2xl relative overflow-hidden">
+    <div class="lg:col-span-2 bg-[#021024] p-6 md:p-8 rounded-[32px] md:rounded-[40px] text-white shadow-2xl relative overflow-hidden min-h-[350px]">
        <div class="relative z-10 h-full flex flex-col">
-         <div class="mb-10">
+         <div class="mb-8">
            <h3 class="font-bold text-lg">Performance da Frota</h3>
-           <p class="text-xs text-slate-400 font-medium">Volume de movimentações semanais (Média {{350/7 | number:'1.0-0'}}/dia)</p>
+           <p class="text-[10px] md:text-xs text-slate-400 font-medium">Volume semanal de movimentações</p>
          </div>
 
-         <div class="flex-1 flex items-end justify-between gap-4">
-           <div *ngFor="let h of [30, 55, 40, 85, 50, 75, 60]; let i = index"
+         <div class="flex-1 flex items-end justify-between gap-2 md:gap-4">
+           <div *ngFor="let h of [30, 55, 40, 85, 50, 75, 60]"
                 [style.height.%]="h"
-                class="flex-1 bg-gradient-to-t from-blue-600/40 to-blue-400/80 hover:from-brand-active hover:to-blue-300 rounded-t-xl transition-all cursor-help relative group">
-
-             <div class="absolute -top-12 left-1/2 -translate-x-1/2 bg-white text-brand-dark text-[10px] font-black py-2 px-3 rounded-xl shadow-2xl opacity-0 group-hover:opacity-100 transition-all z-20 whitespace-nowrap">
-               {{h}}% Eficiência
-               <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-white rotate-45"></div>
-             </div>
+                class="flex-1 bg-gradient-to-t from-blue-600/40 to-blue-400/80 rounded-t-lg md:rounded-t-xl transition-all relative group">
            </div>
          </div>
 
-         <div class="flex justify-between mt-6 text-[10px] text-slate-500 font-black uppercase tracking-[0.2em]">
+         <div class="flex justify-between mt-6 text-[8px] md:text-[10px] text-slate-500 font-black uppercase tracking-widest">
            <span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sab</span><span>Dom</span>
          </div>
        </div>
-
-       <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 20px 20px;"></div>
     </div>
   </div>
 </div>

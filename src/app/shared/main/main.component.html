@@ -1,35 +1,38 @@
 <div class="flex-1 flex flex-col bg-[#F3F6FD] h-full overflow-hidden">
-  <header class="p-8 pb-4">
-    <h1 class="text-2xl font-bold text-slate-800">Gerenciamento de Transportes</h1>
-    <p class="text-sm text-slate-500 mt-1">Controle e monitoramento de cargas em tempo real.</p>
-
+  <header class="p-4 md:p-8 pb-4">
+    <h1 class="text-xl md:text-2xl font-bold text-slate-800 leading-tight">Gerenciamento de Transportes</h1>
+    <p class="text-xs md:text-sm text-slate-500 mt-1">Controle e monitoramento em tempo real.</p>
   </header>
 
-  <div class="px-8 flex-1 flex flex-col overflow-hidden">
+  <div class="px-4 md:px-8 flex-1 flex flex-col overflow-hidden">
+    <div class="flex items-center md:items-end justify-between gap-4">
 
-    <div class="flex gap-1 overflow-x-auto">
-      <button *ngFor="let tab of tabs"
-              [routerLink]="tab.route"
-              routerLinkActive="bg-white text-brand-active shadow-sm"
-              class="px-8 py-3 rounded-t-2xl text-sm font-semibold text-slate-400 hover:text-slate-600 transition-all bg-slate-200/50">
-        {{ tab.label }}
-      </button>
-      <div class="pb-2 "> <button
-        routerLink="/new-delivery"
-        class="bg-brand-active text-white px-6 py-2.5 rounded-xl font-bold text-sm shadow-lg shadow-blue-500/20 hover:bg-blue-600 transition-all active:scale-95 flex items-center">
-        <i class="fa-solid fa-plus mr-2 text-xs"></i>
-        Nova Entrega
-      </button>
-    </div>
+      <div class="flex gap-1 overflow-x-auto no-scrollbar pb-1 md:pb-0 group">
+        <button *ngFor="let tab of tabs"
+                [routerLink]="tab.route"
+                routerLinkActive="bg-white text-brand-active shadow-sm"
+                class="px-5 md:px-8 py-3 rounded-t-xl md:rounded-t-2xl text-xs md:text-sm font-semibold text-slate-400 whitespace-nowrap transition-all bg-slate-200/50">
+          {{ tab.label }}
+        </button>
+      </div>
+
+      <div class="pb-2">
+        <button
+          routerLink="/new-delivery"
+          class="bg-brand-active text-white p-3 md:px-6 md:py-2.5 rounded-xl font-bold text-sm shadow-lg shadow-blue-500/20 hover:bg-blue-600 transition-all active:scale-95 flex items-center justify-center min-w-[44px]">
+          <i class="fa-solid fa-plus md:mr-2 text-sm"></i>
+          <span class="hidden md:inline">Nova Entrega</span>
+        </button>
+      </div>
     </div>
 
-    <div class="flex-1 bg-white rounded-tr-3xl rounded-b-3xl shadow-sm border border-slate-100 p-6 overflow-y-auto">
+    <div class="flex-1 bg-white rounded-b-2xl md:rounded-b-3xl shadow-sm border border-slate-100 p-4 md:p-6 overflow-y-auto">
       <router-outlet></router-outlet>
     </div>
 
-    <footer class="py-4 text-xs text-slate-400 flex justify-between">
+    <footer class="py-4 px-2 text-[10px] md:text-xs text-slate-400 flex flex-col md:flex-row justify-between gap-2 text-center md:text-left">
       <span>Exibindo dados atualizados em tempo real</span>
-      <span>v2.0 - Truck Fast Elite</span>
+      <span class="font-medium">v2.0 - Truck Fast Elite</span>
     </footer>
   </div>
 </div>

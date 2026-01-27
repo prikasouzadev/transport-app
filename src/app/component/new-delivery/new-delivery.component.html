@@ -1,51 +1,48 @@
 <form [formGroup]="deliveryForm" (ngSubmit)="onSubmit()" class="space-y-6">
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
 
     <div class="space-y-1">
-      <label class="text-[10px] uppercase font-bold text-slate-400 tracking-widest ml-1">Nome do Cliente *</label>
+      <label class="text-[9px] md:text-[10px] uppercase font-bold text-slate-400 tracking-widest ml-1">Nome do Cliente *</label>
       <input type="text" formControlName="cliente"
              [ngClass]="{'ring-red-500': deliveryForm.get('cliente')?.invalid && deliveryForm.get('cliente')?.touched}"
-             class="w-full px-5 py-3 rounded-2xl bg-slate-50 border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-brand-active outline-none transition-all text-sm">
+             class="w-full px-5 py-3.5 md:py-3 rounded-2xl bg-slate-50 border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-brand-active outline-none transition-all text-sm">
       <p *ngIf="deliveryForm.get('cliente')?.errors?.['required'] && deliveryForm.get('cliente')?.touched" class="text-[10px] text-red-500 mt-1 ml-1 font-bold">O nome do cliente é obrigatório.</p>
     </div>
 
     <div class="space-y-1">
-      <label class="text-[10px] uppercase font-bold text-slate-400 tracking-widest ml-1">Produto *</label>
+      <label class="text-[9px] md:text-[10px] uppercase font-bold text-slate-400 tracking-widest ml-1">Produto *</label>
       <input type="text" formControlName="produto"
-             class="w-full px-5 py-3 rounded-2xl bg-slate-50 border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-brand-active outline-none transition-all text-sm">
+             class="w-full px-5 py-3.5 md:py-3 rounded-2xl bg-slate-50 border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-brand-active outline-none transition-all text-sm">
     </div>
 
-    <div class="col-span-full space-y-1">
-      <label class="text-[10px] uppercase font-bold text-slate-400 tracking-widest ml-1">Endereço de Destino *</label>
+    <div class="md:col-span-full space-y-1">
+      <label class="text-[9px] md:text-[10px] uppercase font-bold text-slate-400 tracking-widest ml-1">Endereço de Destino *</label>
       <input type="text" formControlName="endereco"
-             class="w-full px-5 py-3 rounded-2xl bg-slate-50 border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-brand-active outline-none transition-all text-sm">
+             class="w-full px-5 py-3.5 md:py-3 rounded-2xl bg-slate-50 border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-brand-active outline-none transition-all text-sm">
     </div>
 
     <div class="space-y-1">
-      <label class="text-[10px] uppercase font-bold text-slate-400 tracking-widest ml-1">Previsão de Entrega *</label>
+      <label class="text-[9px] md:text-[10px] uppercase font-bold text-slate-400 tracking-widest ml-1">Previsão de Entrega *</label>
       <input type="date" formControlName="dataEstimadaEntrega"
              [ngClass]="{'ring-red-500': deliveryForm.get('dataEstimadaEntrega')?.invalid && deliveryForm.get('dataEstimadaEntrega')?.touched}"
-             class="w-full px-5 py-3 rounded-2xl bg-slate-50 border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-brand-active outline-none transition-all text-sm text-slate-500">
-
+             class="w-full px-5 py-3.5 md:py-3 rounded-2xl bg-slate-50 border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-brand-active outline-none transition-all text-sm text-slate-500">
       <p *ngIf="deliveryForm.get('dataEstimadaEntrega')?.errors?.['pastDate']" class="text-[10px] text-red-500 mt-1 ml-1 font-bold italic">
-        A data de entrega não pode ser anterior a hoje.
+        A data não pode ser anterior a hoje.
       </p>
     </div>
   </div>
 
-  <div class="flex justify-end pt-4 gap-4">
+  <div class="flex justify-end pt-4">
     <button type="submit" [disabled]="deliveryForm.invalid"
-        class="relative px-10 py-3 bg-[#021024] text-white rounded-2xl text-sm font-bold shadow-xl hover:bg-slate-800 transition-all disabled:opacity-30 flex items-center gap-2">
-  <i class="fa-solid fa-paper-plane" *ngIf="!deliveryForm.pending"></i>
-  <span>Cadastrar Entrega</span>
-</button>
+        class="w-full md:w-auto relative px-10 py-4 md:py-3 bg-[#021024] text-white rounded-2xl text-sm font-bold shadow-xl hover:bg-slate-800 transition-all disabled:opacity-30 flex items-center justify-center gap-2">
+      <i class="fa-solid fa-paper-plane" *ngIf="!deliveryForm.pending"></i>
+      <span>Cadastrar Entrega</span>
+    </button>
   </div>
 </form>
 
-
-
 <div *ngIf="showSuccessMsg()"
-     class="fixed bottom-10 right-10 flex items-center p-4 mb-4 text-white bg-[#10b981] rounded-2xl shadow-2xl shadow-green-500/20 animate-in fade-in slide-in-from-right-10 duration-300 z-50">
+     class="fixed top-4 left-4 right-4 md:top-auto md:left-auto md:bottom-10 md:right-10 flex items-center p-4 md:mb-4 text-white bg-[#10b981] rounded-2xl shadow-2xl shadow-green-500/20 animate-in fade-in slide-in-from-top-10 md:slide-in-from-right-10 duration-300 z-[100]">
 
     <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 bg-white/20 rounded-lg">
         <i class="fa-solid fa-check text-white"></i>
@@ -55,7 +52,7 @@
         Entrega cadastrada com sucesso!
     </div>
 
-    <button (click)="showSuccessMsg.set(false)" class="ml-auto -mx-1.5 bg-transparent text-white/50 hover:text-white transition-colors">
+    <button (click)="showSuccessMsg.set(false)" class="ml-auto p-1 bg-transparent text-white/50 hover:text-white transition-colors">
         <i class="fa-solid fa-xmark"></i>
     </button>
 </div>

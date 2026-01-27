@@ -1,37 +1,39 @@
-<div class="fixed inset-0 z-[100] flex items-center justify-center p-4">
+<div class="fixed inset-0 z-[100] flex items-center justify-center p-2 md:p-4">
   <div class="absolute inset-0 bg-brand-dark/60 backdrop-blur-sm" (click)="close.emit()"></div>
 
-  <div class="relative bg-white w-full max-w-2xl rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
-    <div class="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50">
+  <div class="relative bg-white w-full max-w-2xl rounded-[24px] md:rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[95vh] md:max-h-[90vh]">
+
+    <div class="p-4 md:p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50">
       <div>
-        <h2 class="text-xl font-bold text-brand-dark">Detalhes da Entrega</h2>
-        <p class="text-xs text-slate-500 font-medium italic">Pedido #{{delivery?.id}}</p>
+        <h2 class="text-lg md:text-xl font-bold text-brand-dark">Detalhes da Entrega</h2>
+        <p class="text-[10px] md:text-xs text-slate-500 font-medium italic">Pedido #{{delivery?.id}}</p>
       </div>
-      <button (click)="close.emit()" class="w-10 h-10 rounded-full hover:bg-slate-200 flex items-center justify-center transition-colors">
+      <button (click)="close.emit()" class="w-8 h-8 md:w-10 md:h-10 rounded-full hover:bg-slate-200 flex items-center justify-center transition-colors">
         <i class="fa-solid fa-xmark text-slate-400"></i>
       </button>
     </div>
 
-    <div class="p-8 overflow-y-auto space-y-8" *ngIf="delivery">
-      <div class="grid grid-cols-2 gap-6">
+    <div class="p-5 md:p-8 overflow-y-auto space-y-6 md:space-y-8" *ngIf="delivery">
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
         <div class="space-y-1">
-          <label class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Cliente</label>
-          <input [value]="delivery.cliente" readonly class="w-full bg-slate-100 border-none rounded-xl px-4 py-2 text-sm text-slate-500 cursor-not-allowed outline-none">
+          <label class="text-[9px] md:text-[10px] uppercase font-bold text-slate-400 tracking-wider">Cliente</label>
+          <input [value]="delivery.cliente" readonly class="w-full bg-slate-100 border-none rounded-xl px-4 py-2.5 text-sm text-slate-500 cursor-not-allowed outline-none">
         </div>
         <div class="space-y-1">
-          <label class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Produto</label>
-          <input [value]="delivery.produto" readonly class="w-full bg-slate-100 border-none rounded-xl px-4 py-2 text-sm text-slate-500 cursor-not-allowed outline-none">
+          <label class="text-[9px] md:text-[10px] uppercase font-bold text-slate-400 tracking-wider">Produto</label>
+          <input [value]="delivery.produto" readonly class="w-full bg-slate-100 border-none rounded-xl px-4 py-2.5 text-sm text-slate-500 cursor-not-allowed outline-none">
         </div>
-        <div class="col-span-2 space-y-1">
-          <label class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Endereço de Entrega</label>
-          <input [value]="delivery.endereco" readonly class="w-full bg-slate-100 border-none rounded-xl px-4 py-2 text-sm text-slate-500 cursor-not-allowed outline-none">
+        <div class="md:col-span-2 space-y-1">
+          <label class="text-[9px] md:text-[10px] uppercase font-bold text-slate-400 tracking-wider">Endereço de Entrega</label>
+          <input [value]="delivery.endereco" readonly class="w-full bg-slate-100 border-none rounded-xl px-4 py-2.5 text-sm text-slate-500 cursor-not-allowed outline-none">
         </div>
       </div>
 
-      <div class="grid grid-cols-2 gap-6 p-6 bg-blue-50/50 rounded-2xl border border-blue-100">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 p-4 md:p-6 bg-blue-50/50 rounded-2xl border border-blue-100">
         <div class="space-y-1">
-          <label class="text-[10px] uppercase font-bold text-brand-active tracking-wider">Status da Carga</label>
-          <select [(ngModel)]="delivery.status" class="w-full bg-white border border-blue-200 rounded-xl px-4 py-2 text-sm focus:ring-2 focus:ring-brand-active outline-none">
+          <label class="text-[9px] md:text-[10px] uppercase font-bold text-brand-active tracking-wider">Status da Carga</label>
+          <select [(ngModel)]="delivery.status" class="w-full bg-white border border-blue-200 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-brand-active outline-none appearance-none">
             <option value="Pendente">Pendente</option>
             <option value="Em Rota">Em Rota</option>
             <option value="Entregue">Entregue</option>
@@ -39,12 +41,12 @@
           </select>
         </div>
         <div class="space-y-1">
-          <label class="text-[10px] uppercase font-bold text-brand-active tracking-wider">Nova Previsão</label>
-          <input type="date" [(ngModel)]="delivery.dataEstimada" class="w-full bg-white border border-blue-200 rounded-xl px-4 py-2 text-sm focus:ring-2 focus:ring-brand-active outline-none">
+          <label class="text-[9px] md:text-[10px] uppercase font-bold text-brand-active tracking-wider">Nova Previsão</label>
+          <input type="date" [(ngModel)]="delivery.dataEstimada" class="w-full bg-white border border-blue-200 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-brand-active outline-none">
         </div>
-        <div class="col-span-2 space-y-1">
-          <label class="text-[10px] uppercase font-bold text-brand-active tracking-wider">Observações do Operador</label>
-          <textarea [(ngModel)]="delivery.observacoes" rows="2" class="w-full bg-white border border-blue-200 rounded-xl px-4 py-2 text-sm focus:ring-2 focus:ring-brand-active outline-none resize-none"></textarea>
+        <div class="md:col-span-2 space-y-1">
+          <label class="text-[9px] md:text-[10px] uppercase font-bold text-brand-active tracking-wider">Observações do Operador</label>
+          <textarea [(ngModel)]="delivery.observacoes" rows="2" class="w-full bg-white border border-blue-200 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-brand-active outline-none resize-none"></textarea>
         </div>
       </div>
 
@@ -53,18 +55,18 @@
           <i class="fa-solid fa-clock-rotate-left text-brand-active"></i> Histórico de Movimentações
         </h3>
         <div class="space-y-3 pl-4 border-l-2 border-slate-100 ml-2">
-          <div *ngFor="let h of delivery.historico" class="relative flex items-center gap-4 py-1">
+          <div *ngFor="let h of delivery.historico" class="relative flex flex-col md:flex-row md:items-center gap-1 md:gap-4 py-1">
             <div class="absolute -left-[21px] w-2 h-2 rounded-full bg-brand-active ring-4 ring-white"></div>
-              <span class="text-[11px] font-bold text-slate-400 w-20">{{h.data | date:'dd/MM/yy'}}</span>
-              <span class="text-xs font-semibold text-slate-600">{{h.status}}</span>
-            </div>
+            <span class="text-[10px] font-bold text-slate-400 w-20">{{h.data | date:'dd/MM/yy HH:mm'}}</span>
+            <span class="text-xs font-semibold text-slate-600">{{h.status}}</span>
           </div>
+        </div>
       </div>
     </div>
 
-    <div class="p-6 bg-slate-50 border-t border-slate-100 flex justify-end gap-3">
-      <button (click)="close.emit()" class="px-6 py-2 text-sm font-bold text-slate-500 hover:text-slate-700 transition-colors">Cancelar</button>
-      <button (click)="save()" class="px-8 py-2 bg-brand-active text-white rounded-xl text-sm font-bold shadow-lg shadow-blue-500/20 hover:bg-blue-600 transition-all">Salvar Alterações</button>
+    <div class="p-4 md:p-6 bg-slate-50 border-t border-slate-100 flex flex-col-reverse md:flex-row justify-end gap-3">
+      <button (click)="close.emit()" class="w-full md:w-auto px-6 py-2.5 text-sm font-bold text-slate-500 hover:text-slate-700 transition-colors">Cancelar</button>
+      <button (click)="save()" class="w-full md:w-auto px-8 py-2.5 bg-brand-active text-white rounded-xl text-sm font-bold shadow-lg shadow-blue-500/20 hover:bg-blue-600 transition-all">Salvar Alterações</button>
     </div>
   </div>
 </div>

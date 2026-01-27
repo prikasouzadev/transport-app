@@ -1,15 +1,15 @@
 <div class="space-y-6">
-  <div class="flex flex-wrap gap-4 items-center justify-between bg-slate-50 p-4 rounded-2xl border border-slate-200">
-    <div class="flex gap-4 flex-1">
-      <div class="relative w-full max-w-xs">
+  <div class="flex flex-col md:flex-row gap-4 items-stretch md:items-center justify-between bg-slate-50 p-4 rounded-2xl border border-slate-200">
+    <div class="flex flex-col md:flex-row gap-3 flex-1">
+      <div class="relative w-full md:max-w-xs">
         <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
         <input type="text" [ngModel]="searchTerm()" (ngModelChange)="searchTerm.set($event); currentPage.set(1)"
                placeholder="Buscar por cliente ou ID..."
-               class="w-full pl-10 pr-4 py-2 rounded-xl border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-brand-active outline-none text-sm">
+               class="w-full pl-10 pr-4 py-3 md:py-2 rounded-xl border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-brand-active outline-none text-sm bg-white">
       </div>
 
       <select [ngModel]="filterStatus()" (ngModelChange)="filterStatus.set($event); currentPage.set(1)"
-              class="px-4 py-2 rounded-xl border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-brand-active outline-none text-sm bg-white">
+              class="w-full md:w-auto px-4 py-3 md:py-2 rounded-xl border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-brand-active outline-none text-sm bg-white appearance-none">
         <option value="">Todos os Status</option>
         <option value="Pendente">Pendente</option>
         <option value="Em Rota">Em Rota</option>
@@ -19,12 +19,12 @@
     </div>
 
     <button (click)="exportToPDF()"
-        class="bg-brand-active text-white px-6 py-2 rounded-xl font-bold text-sm shadow-lg shadow-blue-500/20 hover:bg-blue-600 transition-all active:scale-95">
+        class="bg-brand-active text-white px-6 py-3 md:py-2 rounded-xl font-bold text-sm shadow-lg shadow-blue-500/20 hover:bg-blue-600 transition-all active:scale-95 flex items-center justify-center">
         <i class="fa-solid fa-file-pdf mr-2"></i> Exportar PDF
     </button>
   </div>
 
-  <div class="overflow-x-auto">
+  <div class="hidden md:block overflow-x-auto">
     <table class="w-full text-left border-separate border-spacing-y-2">
       <thead>
         <tr class="text-slate-400 text-xs uppercase tracking-widest">
@@ -54,31 +54,47 @@
     </table>
   </div>
 
-  <div class="flex items-center justify-between pt-4">
-    <span class="text-xs text-slate-500 font-medium">
+  <div class="md:hidden space-y-4">
+    <div *ngFor="let item of paginatedData()" class="bg-white p-5 rounded-[24px] border border-slate-100 shadow-sm space-y-4">
+      <div class="flex justify-between items-start">
+        <span class="text-xs font-black text-brand-dark italic opacity-50">#{{item.id}}</span>
+        <span [class]="getStatusClass(item.status)" class="scale-90 origin-right">{{item.status}}</span>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-bold text-slate-700 leading-tight">{{item.cliente}}</h4>
+        <p class="text-[10px] text-slate-400 font-medium uppercase mt-1">Envio: {{item.dataEnvio | date:'dd/MM/yy'}}</p>
+      </div>
+
+      <button (click)="openDetails(item)"
+              class="w-full py-3 bg-slate-50 hover:bg-brand-active hover:text-white rounded-xl text-xs font-bold text-brand-active border border-brand-active/10 transition-all">
+        Ver Detalhes da Carga
+      </button>
+    </div>
+  </div>
+
+  <div class="flex flex-col md:flex-row items-center justify-between gap-4 pt-4">
+    <span class="text-[10px] md:text-xs text-slate-500 font-bold uppercase tracking-widest order-2 md:order-1">
       Página {{currentPage()}} de {{totalPages()}}
     </span>
-    <div class="flex gap-2">
+
+    <div class="flex gap-1.5 md:gap-2 order-1 md:order-2">
       <button (click)="currentPage.set(currentPage() - 1)" [disabled]="currentPage() === 1"
-              class="w-10 h-10 rounded-xl border border-slate-200 flex items-center justify-center hover:bg-white disabled:opacity-30 transition-all">
-        <i class="fa-solid fa-chevron-left text-xs"></i>
+              class="w-9 h-9 md:w-10 md:h-10 rounded-xl border border-slate-200 flex items-center justify-center bg-white disabled:opacity-30">
+        <i class="fa-solid fa-chevron-left text-[10px]"></i>
       </button>
+
       <button *ngFor="let p of [].constructor(totalPages()); let i = index"
               (click)="currentPage.set(i + 1)"
               [class]="currentPage() === i + 1 ? 'bg-brand-active text-white border-brand-active' : 'bg-white text-slate-600 border-slate-200'"
-              class="w-10 h-10 rounded-xl border flex items-center justify-center text-xs font-bold transition-all">
+              class="w-9 h-9 md:w-10 md:h-10 rounded-xl border flex items-center justify-center text-[10px] md:text-xs font-bold">
         {{i + 1}}
       </button>
+
       <button (click)="currentPage.set(currentPage() + 1)" [disabled]="currentPage() === totalPages()"
-              class="w-10 h-10 rounded-xl border border-slate-200 flex items-center justify-center hover:bg-white disabled:opacity-30 transition-all">
-        <i class="fa-solid fa-chevron-right text-xs"></i>
+              class="w-9 h-9 md:w-10 md:h-10 rounded-xl border border-slate-200 flex items-center justify-center bg-white disabled:opacity-30">
+        <i class="fa-solid fa-chevron-right text-[10px]"></i>
       </button>
     </div>
   </div>
 </div>
-
-<app-delivery-details *ngIf="isModalOpen()"
-                    [delivery]="selectedDelivery()"
-                    (close)="isModalOpen.set(false)"
-                    (saved)="loadDeliveries()">
-</app-delivery-details>

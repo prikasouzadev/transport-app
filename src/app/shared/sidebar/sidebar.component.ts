@@ -16,4 +16,16 @@ export class SidebarComponent {
     { label: 'Entregas', route: '/delivery-list', icon: 'fa-solid fa-bars-staggered' },
     { label: 'Relatórios', route: '/report', icon: 'fa-solid fa-chart-simple' }
   ];
+
+  isMenuOpen = false;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  closeMenuMobile() {
+    if (window.innerWidth < 768) {
+      this.isMenuOpen = false;
+    }
+  }
 }
