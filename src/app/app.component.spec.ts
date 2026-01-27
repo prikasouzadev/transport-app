@@ -1,27 +1,47 @@
-import { TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HeaderComponent } from './shared/header/header.component';
+import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { MainComponent } from './shared/main/main.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { Chart, registerables } from 'chart.js';
 
 describe('AppComponent', () => {
-  beforeEach(() => TestBed.configureTestingModule({
-    imports: [AppComponent]
-  }));
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
+  beforeEach(async () => {
+    Chart.register(...registerables);
 
-  it(`should have the 'transportadora-app' title`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('transportadora-app');
-  });
+    await TestBed.configureTestingModule({
+      imports: [
+        AppComponent,
+        RouterTestingModule,
+        HttpClientTestingModule,
+        HeaderComponent,
+        SidebarComponent,
+        MainComponent
+      ]
+    }).compileComponents();
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
     fixture.detectChanges();
+  });
+
+  it('deve criar a aplicação', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it(`deve ter o título 'transportadora-app'`, () => {
+    expect(component.title).toEqual('transportadora-app');
+  });
+
+  it('deve renderizar o Header, Sidebar e Main no layout', () => {
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('transportadora-app app is running!');
+  expect(compiled.querySelector('app-header')).toBeTruthy();
+    expect(compiled.querySelector('app-sidebar')).toBeTruthy();
+    expect(compiled.querySelector('app-main')).toBeTruthy();
   });
 });

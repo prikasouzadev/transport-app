@@ -8,12 +8,10 @@
     <div class="flex items-center md:items-end justify-between gap-4">
 
       <div class="flex gap-1 overflow-x-auto no-scrollbar pb-1 md:pb-0 group">
-        <button *ngFor="let tab of tabs"
-                [routerLink]="tab.route"
-                routerLinkActive="bg-white text-brand-active shadow-sm"
-                class="px-5 md:px-8 py-3 rounded-t-xl md:rounded-t-2xl text-xs md:text-sm font-semibold text-slate-400 whitespace-nowrap transition-all bg-slate-200/50">
-          {{ tab.label }}
-        </button>
+      <button *ngFor="let tab of tabs"
+        [routerLink]="tab.route"
+        class="tab-button px-5 ..."> {{ tab.label }}
+</button>
       </div>
 
       <div class="pb-2">
