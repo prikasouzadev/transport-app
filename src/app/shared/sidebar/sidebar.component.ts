@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { SidebarService } from 'src/app/service/sidebar.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -18,6 +19,8 @@ export class SidebarComponent {
   ];
 
   isMenuOpen = false;
+
+  constructor(public sidebarService: SidebarService) {}
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;

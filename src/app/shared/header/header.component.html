@@ -7,6 +7,10 @@
     <span class="text-lg md:text-xl font-bold tracking-tight text-slate-800 uppercase">
       Truck <span class="text-blue-600">Fast</span>
     </span>
+     <button (click)="sidebarService.toggle()"
+          class="md:hidden text-slate-600 p-2 hover:bg-slate-100 rounded-lg transition-colors">
+    <i class="fa-solid fa-bars text-xl"></i>
+  </button>
   </div>
 
   <div class="flex items-center gap-3 md:gap-4">
@@ -29,3 +33,5 @@
     </div>
   </div>
 </header>
+
+

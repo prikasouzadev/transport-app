@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SidebarService } from 'src/app/service/sidebar.service';
 
 @Component({
   selector: 'app-header',
@@ -9,5 +10,5 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-
+  constructor(public sidebarService: SidebarService) {}
 }
