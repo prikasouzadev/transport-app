@@ -17,10 +17,10 @@ import autoTable from 'jspdf-autotable';
 })
 export class DeliveryListComponent {
 
-  deliveries = signal<Delivery[]>([]);
+  deliveries = signal<Delivery[]>([]); //armazenar as entregas
   searchTerm = signal('');
   filterStatus = signal('');
-  currentPage = signal(1);
+  currentPage = signal(1); //a pagina atual
   pageSize = 7;
 
   // Modal State
@@ -37,13 +37,16 @@ export class DeliveryListComponent {
 
   // Dados Filtrados
   filteredData = computed(() => {
-    return this.deliveries().filter(d => {
-      const matchSearch = d.cliente.toLowerCase().includes(this.searchTerm().toLowerCase()) ||
-                          d.id.toString().includes(this.searchTerm());
-      const matchStatus = this.filterStatus() ? d.status === this.filterStatus() : true;
-      return matchSearch && matchStatus;
-    });
+    const filtered = this.deliveries().filter(d => {
+    const matchSearch = d.cliente.toLowerCase().includes(this.searchTerm().toLowerCase()) ||
+                        d.id.toString().includes(this.searchTerm());
+    const matchStatus = this.filterStatus() ? d.status === this.filterStatus() : true;
+    return matchSearch && matchStatus;
   });
+
+  return filtered.sort((a, b) => Number(b.id) - Number(a.id));
+  // return filtered.sort((a, b) => b.id - a.id);
+});
 
   // Paginação
   paginatedData = computed(() => {

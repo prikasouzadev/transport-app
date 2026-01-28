@@ -14,7 +14,7 @@ import { Chart } from 'chart.js';
 export class DashboardComponent {
   @ViewChild('statusChart') statusChartCanvas!: ElementRef;
 
-  deliveries = signal<Delivery[]>([]);
+  deliveries = signal<Delivery[]>([]); //traz dados da api
 
   constructor(private deliveryService: DeliveryService) {}
 

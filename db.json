@@ -1,7 +1,7 @@
 {
   "deliveries": [
     {
-      "id": "123878",
+      "id": "1",
       "cliente": "Elisa Lanicia",
       "dataEnvio": "2026-01-10",
       "status": "Entregue",
@@ -22,7 +22,7 @@
       "dataEstimada": "2026-01-13"
     },
     {
-      "id": "123902",
+      "id": "2",
       "cliente": "Sandra Santos",
       "dataEnvio": "2026-01-08",
       "status": "Em Rota",
@@ -46,7 +46,7 @@
       ]
     },
     {
-      "id": "123938",
+      "id": "3",
       "cliente": "Beta Conciira",
       "dataEnvio": "2026-01-09",
       "status": "Entregue",
@@ -70,7 +70,7 @@
       ]
     },
     {
-      "id": "124001",
+      "id": "4",
       "cliente": "Marcos Oliveira",
       "dataEnvio": "2026-01-15",
       "status": "Pendente",
@@ -86,7 +86,7 @@
       ]
     },
     {
-      "id": "124002",
+      "id": "5",
       "cliente": "Ana Julia Lima",
       "dataEnvio": "2026-01-12",
       "status": "Cancelada",
@@ -106,7 +106,7 @@
       ]
     },
     {
-      "id": "124003",
+      "id": "6",
       "cliente": "Ricardo Pereira",
       "dataEnvio": "2026-01-14",
       "status": "Em Rota",
@@ -126,7 +126,7 @@
       ]
     },
     {
-      "id": "124004",
+      "id": "7",
       "cliente": "Juliana Costa",
       "dataEnvio": "2026-01-11",
       "status": "Entregue",
@@ -146,7 +146,7 @@
       ]
     },
     {
-      "id": "124005",
+      "id": "8",
       "cliente": "Gabriel Souza",
       "dataEnvio": "2026-01-16",
       "status": "Pendente",
@@ -162,7 +162,7 @@
       ]
     },
     {
-      "id": "124006",
+      "id": "9",
       "cliente": "Fernanda Lima",
       "dataEnvio": "2026-01-10",
       "status": "Em Rota",
@@ -182,7 +182,7 @@
       ]
     },
     {
-      "id": "124007",
+      "id": "10",
       "cliente": "Bruno Alves",
       "dataEnvio": "2026-01-05",
       "status": "Entregue",
@@ -202,7 +202,7 @@
       ]
     },
     {
-      "id": "124008",
+      "id": "11",
       "cliente": "Lucas Mendes",
       "dataEnvio": "2026-01-18",
       "status": "Em Rota",
@@ -223,7 +223,7 @@
       "dataEstimada": "2026-01-21"
     },
     {
-      "id": "124009",
+      "id": "12",
       "cliente": "Amanda Rocha",
       "dataEnvio": "2026-01-14",
       "status": "Cancelada",
@@ -239,7 +239,7 @@
       ]
     },
     {
-      "id": "124010",
+      "id": "13",
       "cliente": "Patrícia Gomes",
       "dataEnvio": "2026-01-12",
       "status": "Em Rota",
@@ -259,7 +259,7 @@
       ]
     },
     {
-      "id": "124011",
+      "id": "14",
       "cliente": "Rodrigo Silva",
       "dataEnvio": "2026-01-07",
       "status": "Entregue",
@@ -279,10 +279,10 @@
       ]
     },
     {
-      "id": "124012",
+      "id": "15",
       "cliente": "Camila Duarte",
       "dataEnvio": "2026-01-19",
-      "status": "Pendente",
+      "status": "Entregue",
       "endereco": "Rua Chile, 200 - Natal/RN",
       "produto": "Mesa Digitalizadora",
       "dataEstimadaEntrega": "2026-01-24",
@@ -291,11 +291,16 @@
         {
           "data": "2026-01-19",
           "status": "Pedido Criado"
+        },
+        {
+          "data": "2026-01-28",
+          "status": "Entregue"
         }
-      ]
+      ],
+      "dataEstimada": "2026-01-28"
     },
     {
-      "id": "124013",
+      "id": "16",
       "cliente": "Felipe Matos",
       "dataEnvio": "2026-01-11",
       "status": "Em Rota",
@@ -315,7 +320,7 @@
       ]
     },
     {
-      "id": "124014",
+      "id": "17",
       "cliente": "Letícia Pinheiro",
       "dataEnvio": "2026-01-08",
       "status": "Entregue",
@@ -335,7 +340,7 @@
       ]
     },
     {
-      "id": "124015",
+      "id": "18",
       "cliente": "Gustavo Henrique",
       "dataEnvio": "2026-01-20",
       "status": "Pendente",
@@ -351,7 +356,7 @@
       ]
     },
     {
-      "id": "124016",
+      "id": "19",
       "cliente": "Beatriz Santos",
       "dataEnvio": "2026-01-13",
       "status": "Em Rota",
@@ -371,7 +376,7 @@
       ]
     },
     {
-      "id": "124017",
+      "id": "20",
       "cliente": "Thiago Souza",
       "dataEnvio": "2026-01-06",
       "status": "Entregue",
@@ -451,6 +456,40 @@
       "historico": [
         {
           "data": "2026-01-26T20:54:09.791Z",
+          "status": "Pedido Criado",
+          "descricao": "Entrega registrada no sistema"
+        }
+      ]
+    },
+    {
+      "id": "e30c",
+      "cliente": "Carla Maria",
+      "produto": "cadeira Gamer",
+      "endereco": "rua da luza 1004",
+      "dataEnvio": "2026-01-28",
+      "dataEstimadaEntrega": "2026-01-31",
+      "status": "Pendente",
+      "observacoes": "",
+      "historico": [
+        {
+          "data": "2026-01-28T16:55:20.544Z",
+          "status": "Pedido Criado",
+          "descricao": "Entrega registrada no sistema"
+        }
+      ]
+    },
+    {
+      "id": "2600",
+      "cliente": "Maria Joaquina",
+      "produto": "monitor",
+      "endereco": "Rua Assunção",
+      "dataEnvio": "2026-01-28",
+      "dataEstimadaEntrega": "2026-01-29",
+      "status": "Pendente",
+      "observacoes": "",
+      "historico": [
+        {
+          "data": "2026-01-28T17:04:22.347Z",
           "status": "Pedido Criado",
           "descricao": "Entrega registrada no sistema"
         }
